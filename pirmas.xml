@@ -1,18 +1,25 @@
-<MusicLog>
-  <Entries>
-    <Entry>
-      <Artist></Artist>
-      <Title></Title>
-      <Album></Album>
-      <Length></Length>
-      <Year></Year>
-      <DayOfListening></DayOfListening>
-      <TimeOfListening></TimeOfListening>
-      <Tags>
-        <Tag></Tag>
-      </Tags>
-      <TimesListened></TimesListened>
-    </Entry>
-    <Entry></Entry>
-  </Entries>
-</MusicLog>
+<MusicLogs>
+  <MusicLog 
+    xmlns:bk="https://www.last.fm/user/matas-liorentas">
+    <User>
+      <Name></Name>
+      <Url></Url>
+    </User>
+    <Entries>
+      <Entry>
+        <Artist></Artist>
+        <Title></Title>
+        <Album></Album>
+        <Length></Length>
+        <Year></Year>
+        <DayOfListening></DayOfListening>
+        <TimeOfListening></TimeOfListening>
+        <Tags>
+          <Tag></Tag>
+        </Tags>
+        <TimesListened></TimesListened>
+      </Entry>
+      <Entry></Entry>
+    </Entries>
+  </MusicLog>
+</MusicLogs>
