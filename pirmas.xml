@@ -1,17 +1,18 @@
 <MusicLog>
-  <Entry>
-    <Artist></Artist>
-    <Title></Title>
-    <Album></Album>
-    <Length></Length>
-    <Year></Year>
-    <DayOfListening></DayOfListening>
-    <TimeOfListening></TimeOfListening>
-    <Tags>
-      <Tag></Tag>
-    </Tags>
-    <TimesListened></TimesListened>
-
-  </Entry>
-  <Entry></Entry>
+  <Entries>
+    <Entry>
+      <Artist></Artist>
+      <Title></Title>
+      <Album></Album>
+      <Length></Length>
+      <Year></Year>
+      <DayOfListening></DayOfListening>
+      <TimeOfListening></TimeOfListening>
+      <Tags>
+        <Tag></Tag>
+      </Tags>
+      <TimesListened></TimesListened>
+    </Entry>
+    <Entry></Entry>
+  </Entries>
 </MusicLog>
