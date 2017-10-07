@@ -1,0 +1,62 @@
+{
+  "md:MusicData": {
+    "xmlns:md": "https://www.last.fm/user/matas-liorentas", 
+    "md:User": {
+        "Name": "Matas",
+        "Url": "https://www.last.fm/user/matas-liorentas" 
+    },
+    "MusicLogs": {
+      "xmlns": "https://www.last.fm/user/matas-liorentas",
+      "Entry": [
+        {
+          "Type": "flac",
+          "Artist": "Flume",
+          "Title": "TRUST",
+          "Album": "Skin Companion EP I",
+          "Length": "197",
+          "ReleaseYear": "2016",
+          "DayOfListening": "2017-10-07",
+          "TimeOfListening": "21:00",
+          "Size": "14.12",
+          "Tags": { "Tag": "Electronic" }
+        },
+        {
+          "Type": "flac",
+          "Artist": "Grizzly Bear",
+          "Title": "Two Weeks",
+          "Album": "Veckatimest",
+          "Length": "243",
+          "ReleaseYear": "2009",
+          "DayOfListening": "2017-10-07",
+          "TimeOfListening": "21:04",
+          "Size": "12.32",
+          "Tags": { "Tag": "Indie" }
+        },
+        {
+          "Type": "flac",
+          "Artist": "The xx",
+          "Title": "Heart Skipped A Beat",
+          "Album": "xx",
+          "Length": "242",
+          "ReleaseYear": "2009",
+          "DayOfListening": "2017-10-07",
+          "TimeOfListening": "21:08",
+          "Size": "9.65",
+          "Tags": { "Tag": "Indie" }
+        },
+        {
+          "Type": "flac",
+          "Artist": "Frank Ocean",
+          "Title": "Ivy",
+          "Album": "Blond",
+          "Length": "249",
+          "ReleaseYear": "2016",
+          "DayOfListening": "2017-10-07",
+          "TimeOfListening": "21:14",
+          "Size": "9.65",
+          "Tags": { "Tag": "rnb" }
+        }
+      ]
+    }
+  }
+}
