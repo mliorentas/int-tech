@@ -1,0 +1,22 @@
+//*/Entry[Artist="Grizzly Bear"]/ancestor::*
+//*/Entry[Artist="Grizzly Bear"]/descendant::*
+//*/Entry[Artist="Grizzly Bear"]/following-sibling::*
+//*/Entry[Artist="Grizzly Bear"]/preceding-sibling::*
+//*/Entry[Artist="Grizzly Bear"]/following::*
+//*/Entry[Artist="Grizzly Bear"]/preceding::*
+
+/descendant-or-self::*[./Title = /descendant-or-self::*/Entry[last()]/Title]/*/text()
+
+count(//Entry)
+sum(//Entry/Length)
+
+//Length + //Size > //Length
+
+/descendant-or-self::*/Entry[Length > 200]/child::node()
+
+//Length = 197
+//Artist = "Flume"
+//Music = true()
+/descendant-or-self::node() = //Title
+
+//Length < //Size

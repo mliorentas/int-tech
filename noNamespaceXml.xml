@@ -1,0 +1,57 @@
+<MusicData xmlns:md="https://www.last.fm/user/matas-liorentas">
+  <User  Name="Matas" Url="https://www.last.fm/user/matas-liorentas"/>
+  <MusicLogs>
+    <Entry Type="flac">
+      <Artist>Flume</Artist>
+      <Title>TRUST</Title>
+      <Album>Skin Companion EP I</Album>
+      <Length>197</Length>
+      <ReleaseYear>2016</ReleaseYear>
+      <DayOfListening>2017-10-07</DayOfListening>
+      <TimeOfListening>21:00</TimeOfListening>
+      <Size>14.12</Size>
+      <Tags>
+        <Tag>Electronic</Tag>
+      </Tags>
+    </Entry>
+    <Entry Type="flac">
+      <Artist>Grizzly Bear</Artist>
+      <Title>Two Weeks</Title>
+      <Album>Veckatimest</Album>
+      <Length>243</Length>
+      <ReleaseYear>2009</ReleaseYear>
+      <DayOfListening>2017-10-07</DayOfListening>
+      <TimeOfListening>21:04</TimeOfListening>
+      <Size>12.32</Size>
+      <Tags>
+        <Tag>Indie</Tag>
+      </Tags>    
+    </Entry>
+    <Entry Type="flac">
+      <Artist>The xx</Artist>
+      <Title>Heart Skipped A Beat</Title>
+      <Album>xx</Album>
+      <Length>242</Length>
+      <ReleaseYear>2009</ReleaseYear>
+      <DayOfListening>2017-10-07</DayOfListening>
+      <TimeOfListening>21:08</TimeOfListening>
+      <Size>9.65</Size>
+      <Tags>
+        <Tag>Indie</Tag>
+      </Tags>    
+    </Entry>
+    <Entry Type="flac">
+      <Artist>Frank Ocean</Artist>
+      <Title>Ivy</Title>
+      <Album>Blond</Album>
+      <Length>249</Length>
+      <ReleaseYear>2016</ReleaseYear>
+      <DayOfListening>2017-10-07</DayOfListening>
+      <TimeOfListening>21:14</TimeOfListening>
+      <Size>9.65</Size>
+      <Tags>
+        <Tag>rnb</Tag>
+      </Tags>    
+    </Entry>
+  </MusicLogs>
+</MusicData>
