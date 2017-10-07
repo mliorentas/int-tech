@@ -1,0 +1,28 @@
+<md:MusicData xmlns:md="https://www.last.fm/user/matas-liorentas">
+  <md:User  Name="" Url=""/>
+  <MusicLogs 
+    xmlns="https://www.last.fm/user/matas-liorentas">
+    <Entry Type="">
+      <Artist></Artist>
+      <!--- string -->
+      <Title></Title>
+      <!---  -->
+      <Album></Album>
+      <!---  -->
+      <Length></Length>
+      <!--- int -->
+      <ReleaseYear></ReleaseYear>
+      <!--- date -->
+      <DayOfListening></DayOfListening>
+      <!--- string -->
+      <TimeOfListening></TimeOfListening>
+      <!--- date -->
+      <Size></Size><!-- float -->
+      <Tags>
+        <Tag></Tag>
+        <!--- string -->
+      </Tags>
+    </Entry>
+    <Entry></Entry>
+  </Entries>
+</md:MusicData>
