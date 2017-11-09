@@ -1,28 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- ŠAKNIS -->
     <xs:element name="User" type="UserType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="MusicLogs" type="MusicLogsType">
-
     <xs:complexType name="UserType">
-        <xs:attribute name="Name" type="xs:string" />
-        <xs:attribute name="Url" type="xs:string" use="required"/>        
+        <xs:attribute name="Name" type="NameType" />
+        <xs:attribute name="Url" type="xs:string" use="required"/>
+    </xs:complexType>
+    <!-- NameType apribot xs:string -->
+    <xs:simpleType name="NameType">
+        <xs: restriction base="xs:string">
+            <xs:length value="120" />
+        </xs: restriction>
+    </xs:simpleType>
+    <!-- MUSIC LOGS -->
+    <xs:element name="MusicLogs" type="MusicLogsType"/>
+    <xs:complexType name="MusicLogsType">
+        <xs:element name="Entry" type="EntryType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:complexType>
+    <!-- ENTRY TYPES -->
+    <xs:complexType name="EntryType">
+        <xs:sequence>
+            <xs:element name="Artist" type="xs:string"/>
+            <xs:element name="Title" type="xs:string"/>
+            <xs:element name="Album" type="xs:string"/>
+            <xs:element name="Lenght" type="xs:integer"/>
+            <xs:element name="Album" type="xs:string"/>
+            <xs:element name="ListenedOn" type="ListenedOnType"/>
+            <xs:element name="ReleaseYear" type="ReleaseYearType"/>
+            <xs:element name="FileInfo" type="FileInfoType"/>
+            <xs:element name="Tags" type="TagsType"/>
+        </xs:sequence>
+        <xs:choice minOccurs="1" maxOccurs="unbounded"></xs:choice>
+        <xs:attribute name="Url" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Sud4tingas tipas paprastu tureiniu su mano i6vestu prapletimu-->
+    <xs:complexType name="FileInfoBaseType">
+        <xs:attribute name="sizeUnits" type="xs:string"/>
+        <xs:attribute name="size" type="xs:decimal"/>        
+    </xs:complexType>
+
+    <xs:complexType name="FileInfoType">
+        <xs:simpleContent>
+            <xs:extension base="FileInfoBaseType">
+                <xs:attribute name="bitrate" type="xs:integer"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
     
-    <xs:complexType name="MusicLogsType">
-        <xs:list type="EntryType"/>
+    <!-- Sud4tingas tipas sudetingu turiniu su mano i6vestu apribojimu -->
+    <xs:complexType name="TagBaseType">
+        <xs:element name="Tag" type="xs:string" minOccurs="0"/>        
     </xs:complexType>
 
+    <xs:complexType name="TagType">
+        <xs:restriction base="TagBaseType">
+            <xs:complexContent>
+                <xs:element name="Tag" minOccurs="1">
+            </xs:complexContent>
+        </xs:restriction>
+    </xs:complexType>
 
+    <!-- Sud4tingas tipas paprastu turiniu su mano i6vestu apribojimu -->
+    <!-- Sud4tingas tipas sudetingu turiniu su mano i6vestu prapletimu-->
+    <!-- Time of listening list -->
+    <xs:simpleType name="TimeType">
+        <xs:restriction base="NameType">
+            <xs:length value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TimeList">
+        <xs:list itemType="TimeType" />
+    </xs:simpleType>
+    <xs:complexType name="ListenedOnBaseType">
+        <xs:element name="DayOfListening" type="xs:date"/>
+    </xs:complexType>
+    <xs:complexType name="ListenedOnListType">
+        <xs:extension base="ListenedOnBaseType">
+            <xs:complexContent>
+                <xs:element name="TimeOfListening" type="TimeList">
+            </xs:complexContent>
+        </xs:extension>
+    </xs:complexType>
+    <!-- sudetingas tipas su misriu turiniu -->
+    <!-- choice -->
+    <!-- keyref to unique arba key -->
+    <!-- viskas vardu sritis -->
     <xs:complexType name="UžsakymoTipas">
         <xs:sequence>
             <xs:element name="pristatyti" type="AdresoTipas" />
             <xs:element name="apmoka" type="AdresoTipas" />
             <xs:element name="pastaba" type="xs:string" minOccurs="0" />
-            <xs:element name="prekiųSąrašas" type="..." /> 
+            <xs:element name="prekiųSąrašas" type="..." />
         </xs:sequence>
         <xs:attribute name="data" type="xs:date" />
     </xs:complexType>
-        <xs:complexType name="AdresoTipas">
+    <xs:complexType name="AdresoTipas">
         <xs:sequence>
             <xs:element name="vardas" type="xs:string" />
             <xs:element name="gatvė" type="xs:string" />
@@ -33,17 +107,12 @@
     </xs:complexType>
     <xs:simpleType name="MiestoTipas">
         <xs:restriction base="xs:string">
-
-        
             <xs:maxLength value="20" />
         </xs:restriction>
     </xs:simpleType>
 </xs:schema> 
 
- 
-  
-   
-    
+          
 
 
 
