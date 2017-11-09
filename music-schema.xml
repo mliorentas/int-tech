@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- viskas vardu sritis -->    
 <xs:schema 
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.last.fm/user/matas-liorentas"
+    elementFormDefault="qualified" >
+
     <!-- ŠAKNIS -->
     <xs:element name="User" type="UserType" minOccurs="1" maxOccurs="1"/>
     <xs:complexType name="UserType">
         <xs:attribute name="Name" type="NameType" />
         <xs:attribute name="Url" type="xs:string" use="required"/>
     </xs:complexType>
+
     <!-- NameType apribot xs:string -->
     <xs:simpleType name="NameType">
         <xs: restriction base="xs:string">
             <xs:length value="120" />
         </xs: restriction>
     </xs:simpleType>
+
     <!-- MUSIC LOGS -->
     <xs:element name="MusicLogs" type="MusicLogsType"/>
     <xs:complexType name="MusicLogsType">
         <xs:element name="Entry" type="EntryType" minOccurs="1" maxOccurs="unbounded"/>
     </xs:complexType>
+
     <!-- ENTRY TYPES -->
     <xs:complexType name="EntryType">
         <xs:sequence>
@@ -28,10 +35,13 @@
             <xs:element name="Album" type="xs:string"/>
             <xs:element name="ListenedOn" type="ListenedOnType"/>
             <xs:element name="ReleaseYear" type="ReleaseYearType"/>
-            <xs:element name="FileInfo" type="FileInfoType"/>
             <xs:element name="Tags" type="TagsType"/>
         </xs:sequence>
-        <xs:choice minOccurs="1" maxOccurs="unbounded"></xs:choice>
+        <!-- choice -->        
+        <xs:choice>
+            <xs:element name="FileInfo" type="FileInfoType"/>  
+            <xs:element name="FileSize" type="FileInfoBaseType"/>                    
+        </xs:choice>
         <xs:attribute name="Url" type="xs:string" use="required"/>
     </xs:complexType>
 
@@ -64,7 +74,6 @@
 
     <!-- Sud4tingas tipas paprastu turiniu su mano i6vestu apribojimu -->
     <!-- Sud4tingas tipas sudetingu turiniu su mano i6vestu prapletimu-->
-    <!-- Time of listening list -->
     <xs:simpleType name="TimeType">
         <xs:restriction base="NameType">
             <xs:length value="5" />
@@ -83,33 +92,19 @@
             </xs:complexContent>
         </xs:extension>
     </xs:complexType>
+
     <!-- sudetingas tipas su misriu turiniu -->
-    <!-- choice -->
+    <xs:element name="LyricsType">
+    <xs:complexType mixed="true" >
+        <xs:all>
+            <xs:element name="Artist" type="xs:string"/>
+            <xs:element name="Title" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+    </xs:element>
+
     <!-- keyref to unique arba key -->
-    <!-- viskas vardu sritis -->
-    <xs:complexType name="UžsakymoTipas">
-        <xs:sequence>
-            <xs:element name="pristatyti" type="AdresoTipas" />
-            <xs:element name="apmoka" type="AdresoTipas" />
-            <xs:element name="pastaba" type="xs:string" minOccurs="0" />
-            <xs:element name="prekiųSąrašas" type="..." />
-        </xs:sequence>
-        <xs:attribute name="data" type="xs:date" />
-    </xs:complexType>
-    <xs:complexType name="AdresoTipas">
-        <xs:sequence>
-            <xs:element name="vardas" type="xs:string" />
-            <xs:element name="gatvė" type="xs:string" />
-            <xs:element name="miestas" type="MiestoTipas" />
-            <xs:element name="indeksas" type="xs:string" />
-        </xs:sequence>
-        <xs:attribute name="šalis" type="xs:string" fixed="LT" />
-    </xs:complexType>
-    <xs:simpleType name="MiestoTipas">
-        <xs:restriction base="xs:string">
-            <xs:maxLength value="20" />
-        </xs:restriction>
-    </xs:simpleType>
+
 </xs:schema> 
 
           
