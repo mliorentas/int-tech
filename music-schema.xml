@@ -2,6 +2,7 @@
 <!-- viskas vardu sritis -->    
 <xs:schema 
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:mx="https://www.last.fm/user/matas-liorentas"
     targetNamespace="https://www.last.fm/user/matas-liorentas"
     elementFormDefault="qualified" >
 
@@ -20,9 +21,20 @@
     </xs:simpleType>
 
     <!-- MUSIC LOGS -->
-    <xs:element name="MusicLogs" type="MusicLogsType"/>
+    <xs:element name="MusicLogs" type="MusicLogsType">
+        <xs:keyref name="RefToTag" refer="TagsKey">
+            <xs:selector xpath="*"/>
+            <xs:field xpath="@Genre"/>
+        </xs:keyref>
+    </xs:element>/>
     <xs:complexType name="MusicLogsType">
-        <xs:element name="Entry" type="EntryType" minOccurs="1" maxOccurs="unbounded"/>
+        <xs:element name="Entry" type="EntryType" minOccurs="1" maxOccurs="unbounded">
+            <xs:key name="TagsKey">
+                <xs:selector xpath="mx:Tags/mx:Tag"/>
+                <xs:field xpath="mx:Tag"/>
+            </xs:key>
+        </xs:element>
+        
     </xs:complexType>
 
     <!-- ENTRY TYPES -->
