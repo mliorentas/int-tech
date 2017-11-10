@@ -1,0 +1,72 @@
+{
+  "MusicData": "object",
+  "properties": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        }
+      }
+    },
+    "MusicLogs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "Entry": {
+          "type": "object",
+          "properties": {
+            "Artist": {
+              "type": "string"
+            },
+            "Title": {
+              "type": "string"
+            },
+            "Album": {
+              "type": "string"
+            },
+            "Length": {
+              "type": "integer"
+            },
+            "ListenedOn": {
+              "type": "object",
+              "properties": {
+                "DayOfListening": {
+                  "type": "string"
+                },
+                "TimeOfListening": {
+                  "type": "string"
+                }
+              },
+              "ReleaseYear": {
+                "type": "number"
+              },
+              "Tags": {
+                "type": "object",
+                "properties": {
+                  "Tag": {
+                    "type": "string"
+                  }
+                }
+              },
+              "FileSize": {
+                "type": "object",
+                "properties": {
+                  "size": {
+                    "type": "string"
+                  },
+                  "sizeUnits": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
