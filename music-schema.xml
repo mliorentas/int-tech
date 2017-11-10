@@ -23,7 +23,7 @@
     <!-- MUSIC LOGS -->
     <xs:element name="MusicLogs" type="MusicLogsType">
         <xs:keyref name="RefToTag" refer="TagsKey">
-            <xs:selector xpath="*"/>
+            <xs:selector xpath="mx:MusicLogs"/>
             <xs:field xpath="@Genre"/>
         </xs:keyref>
     </xs:element>/>
@@ -54,7 +54,7 @@
             <xs:element name="FileInfo" type="FileInfoType"/>  
             <xs:element name="FileSize" type="FileInfoBaseType"/>                    
         </xs:choice>
-        <xs:attribute name="Url" type="xs:string" use="required"/>
+        <xs:attribute name="Type" type="xs:string"/>
     </xs:complexType>
 
     <!-- Sud4tingas tipas paprastu tureiniu su mano i6vestu prapletimu-->
@@ -106,7 +106,7 @@
     </xs:complexType>
 
     <!-- sudetingas tipas su misriu turiniu -->
-    <xs:element name="LyricsType">
+    <xs:element name="LyricsType" minOccurs="0">
     <xs:complexType mixed="true" >
         <xs:all>
             <xs:element name="Artist" type="xs:string"/>
