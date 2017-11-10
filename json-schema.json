@@ -5,11 +5,16 @@
       "type": "object",
       "properties": {
         "Name": {
-          "type": "string"
+          "allOf":[
+            {"type": "string"},
+            {"minLength": 2},
+            {"pattern":"^[a-zA-Z]$"}
+          ]
         },
         "Url": {
           "type": "string"
-        }
+        },
+        "required":["url"]
       }
     },
     "MusicLogs": {
@@ -18,9 +23,11 @@
       "items": {
         "Entry": {
           "type": "object",
+          "required":["Artist", "Title", "ListenedOn"],
           "properties": {
             "Artist": {
-              "type": "string"
+              "type": "string",
+              "maxLength":200
             },
             "Title": {
               "type": "string"
@@ -29,16 +36,21 @@
               "type": "string"
             },
             "Length": {
-              "type": "integer"
+              "oneOf":[
+                {"type":"string"},
+                {"type": "integer", "minimum":1}
+              ]
             },
             "ListenedOn": {
               "type": "object",
+              "required":["DayOfListening"],
               "properties": {
                 "DayOfListening": {
                   "type": "string"
                 },
                 "TimeOfListening": {
-                  "type": "string"
+                  "type": "string",
+                  "pattern":"^[0-9]{:}$"
                 }
               },
               "ReleaseYear": {
@@ -48,7 +60,8 @@
                 "type": "object",
                 "properties": {
                   "Tag": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": ["Indie", "electronic", "rnb", "rock", "pop"]
                   }
                 }
               },
@@ -56,7 +69,10 @@
                 "type": "object",
                 "properties": {
                   "size": {
-                    "type": "string"
+                    "anyOf":[
+                      {"type": "string"},
+                      {"type": "number"}
+                    ]                    
                   },
                   "sizeUnits": {
                     "type": "string"

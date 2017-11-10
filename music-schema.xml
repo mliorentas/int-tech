@@ -15,9 +15,9 @@
 
     <!-- NameType apribot xs:string -->
     <xs:simpleType name="NameType">
-        <xs: restriction base="xs:string">
+        <xs:restriction base="xs:string">
             <xs:length value="120" />
-        </xs: restriction>
+        </xs:restriction>
     </xs:simpleType>
 
     <!-- MUSIC LOGS -->
@@ -79,7 +79,7 @@
     <xs:complexType name="TagType">
         <xs:restriction base="TagBaseType">
             <xs:complexContent>
-                <xs:element name="Tag" minOccurs="1">
+                <xs:element name="Tag" minOccurs="1"/>
             </xs:complexContent>
         </xs:restriction>
     </xs:complexType>
@@ -100,7 +100,7 @@
     <xs:complexType name="ListenedOnListType">
         <xs:extension base="ListenedOnBaseType">
             <xs:complexContent>
-                <xs:element name="TimeOfListening" type="TimeList">
+                <xs:element name="TimeOfListening" type="TimeList"/>
             </xs:complexContent>
         </xs:extension>
     </xs:complexType>

@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "grafas":{
+            "type": "object",
+            "minimum":1,
+            "properties": {
+                "taskai":{
+                    "type":"array",
+                    "minItems":1,
+                    "items":{
+                        "taskas":{"type":"object",
+                            "properties":{
+                                "id":{"type":"integer"},
+                                "svoris":{"type":"integer"}
+                            }
+                        }                                     
+                    }
+                },
+                "briaunos":{
+                    "type":"array",
+                    "minItems":0,
+                    "items":{
+                        "briauna":{
+                            "type":"object",
+                            "properties":{
+                                "pradziosTaskas":{
+                                    "type":"integer"
+                                },
+                                "pabaigosTaskas":{
+                                    "type":"integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
