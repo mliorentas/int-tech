@@ -1,0 +1,105 @@
+nav {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right:10px;
+    padding-bottom:10px;
+}
+section {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    
+    float:left;
+    padding:10px;
+}
+article {
+    padding: inherit;
+
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+
+    visibility: visible !important;
+    visibility: hidden;
+}
+article#info {
+    background-color: rgb(42, 197, 112);
+    }
+
+aside {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    
+    padding:30px;
+    float: right;
+}
+
+table {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    
+    padding:10px;
+}
+
+th {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    padding: 2px;
+}
+td {
+    border-width: 1px;
+    border-color: black;
+    border-style: ridge;
+    padding: 2px;
+    
+}
+nav>a {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+nav>a:active {
+    color: cyan;
+}
+nav>a:visited {
+    color: maroon;
+}
+nav>a[href*="mif.vu"] {
+    border-width:2px;
+    border-color: rgb(43, 15, 146);
+    border-style: ridge;
+    padding:10px;
+}
+
+p {
+    display:block;
+    color: rgb(44, 6, 6);
+}
+p.idomus {
+    color: rgb(255, 0, 76);
+}
+
+ol>li{
+    font-weight: bold;
+
+}
+form input{
+    padding:2px;
+    margin: 5px;
+}
+
+
+@media screen and (max-width:480px) {
+    section {
+        float:none;
+    }
+    aside {  
+        float: none;
+    }
+}
